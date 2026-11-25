@@ -1,0 +1,333 @@
+/* --- HERO SECTION --- */
+.hero-section {
+    margin: 20px;
+    min-height: 420px;
+    border-radius: 18px;
+    background-image: url("/images/hero-banner-3.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    padding: 50px;
+    position: relative; 
+}
+
+/* Dark overlay for better text readability */
+.hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.3); 
+    border-radius: 18px;
+    z-index: 1;
+}
+
+.hero-content {
+    max-width: 500px;
+    color: white;
+    position: relative;
+    z-index: 2; 
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.hero-content h1 span {
+    color: #0ab3a6;
+}
+
+.hero-content p {
+    font-size: 19px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap; 
+}
+
+.shop-btn {
+    background-color: #0ab3a6;
+    color: white;
+    border: none;
+    padding: 12px 28px; 
+    border-radius: 7px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.shop-btn:hover { 
+    background-color: #078f86; 
+}
+
+.deal-btn {
+    background-color: transparent;
+    color: white;
+    border: 1px solid #0ab3a6;
+    padding: 12px 24px;
+    border-radius: 7px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.deal-btn:hover { 
+    background-color: #0ab3a6; 
+}
+
+.hero-benefits {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Adjusted gap */
+    margin-top: 35px;
+    flex-wrap: nowrap; /* Forces them to stay on one line */
+}
+
+.benefits-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 6px;
+}
+
+.benefits-item img {
+    width: 20px; /* Smaller icons to fit */
+    height: 20px;
+    object-fit: contain;
+}
+
+.benefits-item p {
+    margin: 0;
+    color: white;
+    font-size: 14px; /* Smaller text to fit */
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+/* --- SHOP BY CATEGORY --- */
+.category-section {
+    padding: 35px 32px;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.section-heading h2 {
+    font-family: "Inter", sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #111827;
+}
+
+.section-heading a {
+    color: #0aa89e;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.section-heading a:hover {
+    color: #078f86;
+    text-decoration: underline;
+}
+
+.category-list {
+    display: flex;
+    gap: 16px;
+}
+
+.category-card {
+    flex: 1; 
+    height: 230px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 15px; 
+    cursor: pointer;
+    transition: all 0.3s ease; 
+    text-decoration: none; 
+}
+
+.category-card img {
+    width: 120px; 
+    height: 120px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.category-card h3 {
+    margin: 0 0 5px 0;
+    font-size: 16px;
+    font-weight: 700;
+    color: #111827;
+    line-height: 1.2;
+}
+
+.category-card p {
+    margin: 0;
+    font-size: 13px;
+    color: #4b5563;
+}
+
+/* Background Colors */
+.electronics { background-color: #e9f7f5; }
+.fashion { background-color: #fceee8; }
+.home-kitchen { background-color: #fff5dc; }
+.beauty { background-color: #f1eafa; }
+.sports { background-color: #e9f0f9; }
+.books { background-color: #fceee5; }
+
+/* Hover Effect */
+.category-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08); 
+}
+
+/* --- RESPONSIVE DESIGN --- */
+@media (max-width: 1020px) {
+    .category-list {
+        flex-wrap: wrap;
+        gap: 14px;
+    }
+    .category-card {
+        flex: 0 0 calc(33.33% - 10px);
+        height: 220px;
+    }
+}
+
+@media (max-width: 700px) {
+    .hero-section {
+        padding: 30px 20px;
+        min-height: 350px;
+    }
+    .hero-content h1 { font-size: 32px; }
+    .hero-content p { font-size: 16px; }
+    
+    /* Allows horizontal scroll on mobile so they don't break */
+    .hero-benefits {
+        overflow-x: auto;
+        padding-bottom: 10px;
+        -ms-overflow-style: none;  
+        scrollbar-width: none;  
+    }
+    .hero-benefits::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .category-section {
+        padding: 25px 15px;
+    }
+    .category-list {
+        gap: 12px;
+    }
+    .category-card {
+        flex: 0 0 calc(50% - 6px);
+        height: 190px;
+        padding: 10px;
+    }
+    .category-card img {
+        width: 90px;
+        height: 90px;
+    }
+    .category-card h3 {
+        font-size: 14px;
+    }
+    .category-card p {
+        font-size: 11px;
+    }
+}
+
+/* Shop by category end here */
+
+/* products section  */
+.products-section{
+    padding: 40px;
+    background:white;
+}
+
+/* Trending Heading */
+.trending-heading{
+    display: flex;
+    flex-direction: column;
+}
+
+/* Trending Title */
+.trending-title{
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 0;
+    color: #071E27;
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+/* Trending Image */
+.trending-title img {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+}
+
+/* Now Color */
+.trending-title strong {
+  color: #FF4B23;
+}
+
+.trending-product-grid{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 22px;
+}
+
+.trending-product-card{
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(145deg,#F4FAFA 0%,#E6F3F2 100%);
+    border: 1px solid #DCEBEA;
+    border-radius: 18px;
+    padding: 14px;
+    width: 100%;
+    max-width: 320px;
+    box-sizing: border-box;
+    box-shadow: 0 6px 20px rgba(7,30,39,0.08);
+    transition: all 0.3s ease;
+}
+
+.trending-product-image{
+    width: 100%;
+    height: 170px;
+    background: #FFFFFF;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    box-shadow: 0 3px 12px rgba(7,30,39,0.06);
+}
+
+.trending-product-image img{
+    width: 84%;
+    height: 92%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+
+}
+
